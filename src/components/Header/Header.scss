@@ -1,0 +1,23 @@
+.Header {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 102px;
+  line-height: 122px;
+  color: var(--base-weak-color);
+  // display: flex;
+  // justify-content: center;
+  // flex-direction: column;
+  width: 48.5rem;
+  margin: auto;
+
+    &__left-world {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &__right-world {
+      margin-top: -30px;
+      display: flex;
+      justify-content: flex-end;
+    }
+}

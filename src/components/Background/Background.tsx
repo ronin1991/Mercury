@@ -1,11 +1,13 @@
 import React from 'react'
-import './background.scss'
+import './Background.scss'
 
+export const Background: React.FC = (props) => {
+  const { children } = props;
+  console.log(children);
 
-function Background() {
   return (
-    <div className="background">
-      <h1>hello</h1>
+    <div className="Background">
+      {children}
     </div>
   )
 }

@@ -1,15 +1,18 @@
 import React from 'react'
-import './card.scss'
-import CardTitle from '../CardTitle/CardTitle'
-import Select from '../Select/Select'
+import './Card.scss'
 
-function Card() {
+
+// export interface ICardProps {
+//   description: any
+// }
+
+export  const Card: React.FC = (props) => {
+  const {children} = props;
   return (
-    <div className="card">
-      <CardTitle description='7 Days Forecast'></CardTitle>
-      <Select />
+    <div className="Card">
+      {children}
     </div>
   )
 }
 
-export default Card
+
