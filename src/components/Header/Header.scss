@@ -4,12 +4,11 @@
   font-weight: bold;
   font-size: 102px;
   line-height: 122px;
-  color: var(--base-weak-color);
-  // display: flex;
-  // justify-content: center;
-  // flex-direction: column;
+  color: var(--Base-color);
   width: 48.5rem;
   margin: auto;
+  margin-bottom: 60px;
+
 
     &__left-world {
       display: flex;

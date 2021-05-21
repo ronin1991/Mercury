@@ -1,9 +1,11 @@
 import React from 'react'
+import './Slider.scss'
 
-export const CardBody = (props) => {
+export const Slider = (props: any) => {
+
   const { children } = props;
   return (
-    <div>
+    <div className="Slider">
       {children}
     </div>
   )

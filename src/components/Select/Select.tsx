@@ -3,11 +3,12 @@ import cn from 'classnames';
 import './Select.scss'
 
 export interface ISelectProps {
-  cities: any
+  cities: any,
+  isPositionBottom: any
 }
 
 export const Select: React.FC<ISelectProps> = (props) => {
-  const {children, cities} = props;
+  const {children, cities, isPositionBottom} = props;
  
 
   const [visibleMenu, setVisibleMenu] = useState(false);
@@ -33,28 +34,29 @@ export const Select: React.FC<ISelectProps> = (props) => {
   };
 
   const selectInputClass = cn({
-    select__current: true,
-    select__current_selected: activeMenuItem,
+    Select__current: true,
+    Select__current_selected: activeMenuItem,
   });
 
+  const selectClass = cn({
+    'Select': true,
+    'Select_position_bottom': isPositionBottom
+  })
   return (
-    <div className="select" onClick={ toggleVisibleMenu }>
-      <div className="select__header">
+    <div className={selectClass} onClick={ toggleVisibleMenu }>
+      <div className="Select__header">
         <div className={selectInputClass}><span>{activeMenuItem ? activeMenuItem : children}</span></div>
-        <div className="select__icon">
+        <div className="Select__icon">
           {changeArrow(visibleMenu)}
         </div>
       </div>
-      <div className="select__body">
         {visibleMenu &&
-            <div className="select__menu">
+            <div className="Select__menu">
               {cities.map((city: any, i: any) => 
-                <div key={`${city}${i}`} className="select__item" onClick={() => selectedItemMenu(city)}><span>{city}</span></div>)
+                <div key={`${city}${i}`} className="Select__item" onClick={() => selectedItemMenu(city)}><span>{city}</span></div>)
               }
             </div>
           }
-      </div>
-      
     </div>
   )
 }

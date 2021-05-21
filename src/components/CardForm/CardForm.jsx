@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './CardForm.scss';
 
 export const CardForm = (props) => {
   const { children } = props;
   return (
-    <div>
+    <div className="CardForm">
       {children}
     </div>
   )
