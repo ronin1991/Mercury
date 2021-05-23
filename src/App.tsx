@@ -1,29 +1,24 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.scss';
 import Background from './components/Background/Background';
 import { ForecastForDay } from './components/ForecastForDay/ForecastForDay';
 import { Header } from './components/Header';
 import { SevenDaysForecast } from './components/SevenDaysForecast/SevenDaysForecast';
-import axios from 'axios'
+
 
 function App() {
-  useEffect(() => {
-    console.log('hi')
-  })
-
-  axios.get(
-    'https://api.openweathermap.org/data/2.5/onecall?lat=45.035470&lon=38.975313&exclude=minutely,hourly,current,alerts&appid=94f6f0535fb640ce9b8b030ad3d5f5ee&units=metric'
-    )
-    .then(res => console.log(res.data));
-
   return (
     <div className="App">
       <Background>
-        <Header></Header>
-        <main>
-          <SevenDaysForecast />
-          <ForecastForDay />
-        </main>
+        <div className="App__wrapper">
+          <Header className="App__header"></Header>
+          <main className="App__main">
+            <SevenDaysForecast />
+            <ForecastForDay />
+          </main>
+          <footer className="App__footer">C ЛЮБОВЬЮ ОТ MERCURY DEVELOPMENT</footer>
+        </div>
+        
       </Background>
     </div>
   );

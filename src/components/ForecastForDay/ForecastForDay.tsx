@@ -6,20 +6,25 @@ import { Select } from '../Select';
 import { CardBody } from '../CardBody';
 // import { NoWeatherCard } from '../NoWeatherCard';
 import { Calendar } from '../Calendar';
+import './ForecastForDay.scss'
 // import { Slider } from '../Slider/Slider';
 // import { CardWeather } from '../CardWeather/CardWeather';
 
 
 
-
+const cities = ['Самара', 'Тольятти', 'Саратов' , 'Казань', 'Краснодар'];
 
 export const ForecastForDay = () => {
 
+  // const [selectedCity, setSelectedCity] = useState(null);
+
+
+
   return (
     <Card>
-      <CardTitle description='Forecast for a Date in the Past' isPositionBottom={true}/>
+      <CardTitle className="ForecastForDay__title">Forecast for a Date in the Past</CardTitle>
       <CardForm>
-        <Select cities={['Самара', 'Тольятти', 'Саратов' , 'Казань', 'Краснодар']} isPositionBottom={true}>
+        <Select options={ cities } className="ForecastForDay__select" onSelect="">
           Select city
         </Select>
         <Calendar />

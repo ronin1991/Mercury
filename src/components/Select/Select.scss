@@ -85,5 +85,8 @@
       border-radius: 8px;
     }
   }
+  &__arrow_top {
+    transform: rotate(180deg);
+  }
 }
 

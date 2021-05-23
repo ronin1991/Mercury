@@ -1,4 +1,23 @@
 .Slider {
   display: flex;
   justify-content: space-between;
+  &__button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &_left {
+      transform: rotate(180deg);
+      margin-left: -40px;
+    }
+    &_right {
+      margin-right: -40px;
+    }
+
+    &_disabled {
+      pointer-events: none;
+      opacity: 0.4;
+    }
+  }
+  
 }

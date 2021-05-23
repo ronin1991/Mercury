@@ -1,4 +1,7 @@
 .CardWeather {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
   width: 174px;
   height: 238px;
   background: var(--Accent-color);
@@ -14,9 +17,17 @@
   &__date {
     font-size: 16px;
     line-height: 24px;
+    margin-bottom: 15px;
   }
+
+  &__icon {
+    align-self: center;
+    margin-bottom: 7px;
+  }
+
   &__temperature {
     font-size: 32px;
     line-height: 32px;
+    align-self: flex-end;
   }
 }
