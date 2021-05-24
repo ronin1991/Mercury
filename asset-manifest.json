@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/mercury/static/css/main.ccdfebf2.chunk.css",
+    "main.js": "/mercury/static/js/main.e2b12eb5.chunk.js",
+    "main.js.map": "/mercury/static/js/main.e2b12eb5.chunk.js.map",
+    "runtime-main.js": "/mercury/static/js/runtime-main.5b0ac911.js",
+    "runtime-main.js.map": "/mercury/static/js/runtime-main.5b0ac911.js.map",
+    "static/js/2.9422babf.chunk.js": "/mercury/static/js/2.9422babf.chunk.js",
+    "static/js/2.9422babf.chunk.js.map": "/mercury/static/js/2.9422babf.chunk.js.map",
+    "static/js/3.ead5aabd.chunk.js": "/mercury/static/js/3.ead5aabd.chunk.js",
+    "static/js/3.ead5aabd.chunk.js.map": "/mercury/static/js/3.ead5aabd.chunk.js.map",
+    "index.html": "/mercury/index.html",
+    "static/css/main.ccdfebf2.chunk.css.map": "/mercury/static/css/main.ccdfebf2.chunk.css.map",
+    "static/js/2.9422babf.chunk.js.LICENSE.txt": "/mercury/static/js/2.9422babf.chunk.js.LICENSE.txt",
+    "static/media/noWeather.a09393d9.png": "/mercury/static/media/noWeather.a09393d9.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5b0ac911.js",
+    "static/js/2.9422babf.chunk.js",
+    "static/css/main.ccdfebf2.chunk.css",
+    "static/js/main.e2b12eb5.chunk.js"
+  ]
+}
