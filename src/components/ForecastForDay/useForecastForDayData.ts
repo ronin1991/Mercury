@@ -1,28 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 
-export const useForecastForDayData = (city: any) => {
-  
-  const [sevenDaysForecastData, setSevenDaysForecastData] = useState<any>();
+export const useForecastForDayData = (city: any, day: any) => {
+  const [sevenDaysForecastData, setSevenDaysForecastData] = useState<any>()
 
-  useEffect( () => {
+  useEffect(() => {
     const getForecastData = async () => {
-      // console.log(city)
-      const { lat, lon } = city;
-      const {data} = await axios.get(
-        'http://api.openweathermap.org/data/2.5/onecall/timemachine?lat=60.99&lon=30.9&dt=1586468027&appid=94f6f0535fb640ce9b8b030ad3d5f5ee'
-      ) 
-      
+      const { lat, lon } = city
+      const dt = Date.parse(day) / 1000
+
+      const { data } = await axios.get(
+        `http://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${lat}&lon=${lon}&dt=${dt}&appid=94f6f0535fb640ce9b8b030ad3d5f5ee`
+      )
+
       console.log(data)
-        setSevenDaysForecastData(data)
+      setSevenDaysForecastData(data)
     }
 
-    if (city) {
+    if (city && day) {
       getForecastData()
     }
-    
-  }, [city])
+  }, [city, day])
 
-  return sevenDaysForecastData;
+  return sevenDaysForecastData
 }
-// `https://api.openweathermap.org/data/2.5/onecall/timemachine?units=metric&lat=${lat}&lon=${lon}&dt=1586468027&appid=94f6f0535fb640ce9b8b030ad3d5f5ee`

@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import { CardTitle } from '../Card/CardTitle';
-import { Card } from '../Card';
-import { CardForm } from '../CardForm';
-import { Select } from '../Select';
-import { NoWeatherCard } from '../NoWeatherCard';
-import { Slider } from '../Slider/Slider';
-import { useWeatherDaysData } from '../../useWeatherDaysData'
+import React, { useState } from 'react'
+import { CardTitle } from '../Card/CardTitle'
+import { Card } from '../Card'
+import { CardForm } from '../CardForm'
+import { Select } from '../Select'
+import { NoWeatherCard } from '../NoWeatherCard'
+import { Slider } from '../Slider/Slider'
+import { useWeatherDaysData } from './useWeatherDaysData'
 import { cities } from '../../assets/cities.js'
-import './SevenDaysForecast.scss';
+import './SevenDaysForecast.scss'
 
 export const SevenDaysForecast = () => {
+  const [selectedCity, setSelectedCity] = useState<any>()
 
-  const [selectedCity, setSelectedCity] = useState<any>();
+  const cityWeatherData = useWeatherDaysData(selectedCity)
 
-  const cityWeatherData = useWeatherDaysData(selectedCity);
+  // const { temp, dt } = data;
+
+  // const icon = data.weather[0].icon;
 
   return (
     <Card>
@@ -23,9 +26,9 @@ export const SevenDaysForecast = () => {
           Select city
         </Select>
       </CardForm>
-       {cityWeatherData 
-          ?<Slider className="SevenDaysForecast__slider" cardWeatherData ={cityWeatherData.daily}/>
-          : <NoWeatherCard className="SevenDaysForecast__noWeather" />}
+       {cityWeatherData
+         ? <Slider className="SevenDaysForecast__slider" cardWeatherData ={cityWeatherData.daily}/>
+         : <NoWeatherCard className="SevenDaysForecast__noWeather" />}
     </Card>
   )
 }

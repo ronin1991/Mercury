@@ -1,1 +1,1 @@
-export { NoWeatherCard } from './NoWeatherCard';
+export { NoWeatherCard } from './NoWeatherCard'

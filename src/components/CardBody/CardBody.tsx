@@ -6,10 +6,10 @@ export interface ICardBodyProps{
 }
 
 export const CardBody: React.FC<ICardBodyProps> = (props) => {
-  const { children, isPositionBottom } = props;
+  const { children, isPositionBottom } = props
   const CardBodyClass = cn({
-    'CardBody': true,
-    'CardBody_margin_bottom': isPositionBottom,
+    CardBody: true,
+    CardBody_margin_bottom: isPositionBottom
   })
   return (
     <div className={CardBodyClass}>

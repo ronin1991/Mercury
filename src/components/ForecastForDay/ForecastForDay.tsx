@@ -1,25 +1,26 @@
 import React, { useState } from 'react'
-import { CardTitle } from '../Card/CardTitle';
-import { Card } from '../Card';
-import { CardForm } from '../CardForm';
-import { Select } from '../Select';
-import { NoWeatherCard } from '../NoWeatherCard';
-import { Calendar } from '../Calendar';
-import {cities} from '../../assets/cities'
+import { CardTitle } from '../Card/CardTitle'
+import { Card } from '../Card'
+import { CardForm } from '../CardForm'
+import { Select } from '../Select'
+import { NoWeatherCard } from '../NoWeatherCard'
+import { Calendar } from '../Calendar'
+import { cities } from '../../assets/cities'
 import { useForecastForDayData } from './useForecastForDayData'
-// import { ForecastForDayCard } from '../ForecastForDayCard';
-import { CardWeather } from '../CardWeather/CardWeather';
+import { CardWeather } from '../CardWeather/CardWeather'
 import './ForecastForDay.scss'
 
-
-
 export const ForecastForDay = () => {
+  const [selectedCity, setSelectedCity] = useState()
+  const [selectedDay, setSelectedDay] = useState()
 
-  const [selectedCity, setSelectedCity] = useState();
-  const [selectedDay, setSelectedDay] = useState();
+  const cityWeatherData = useForecastForDayData(selectedCity, selectedDay)
 
-  const cityWeatherData = useForecastForDayData(selectedCity);
-
+  const cardWeatherData = () => {
+    const { dt, temp } = cityWeatherData.current
+    const icon = cityWeatherData.current.weather[0].icon
+    return { dt, temp: { day: temp }, icon }
+  }
 
   return (
     <Card>
@@ -30,13 +31,12 @@ export const ForecastForDay = () => {
         </Select>
         <Calendar onSelectDay={setSelectedDay} />
       </CardForm>
-      {/* <ForecastForDayCard /> */}
-      {cityWeatherData 
-        ? <CardWeather data={cityWeatherData.daily[0]} className="ForecastForDay__card" />
-        : <NoWeatherCard className=""/>
+
+      {cityWeatherData
+        ? <CardWeather data={cardWeatherData()} className="ForecastForDay__card" />
+        : <NoWeatherCard className="ForecastForDay__noCard"/>
       }
-      <p>{selectedDay}</p>
     </Card>
-    
+
   )
 }

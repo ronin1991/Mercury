@@ -1,5 +1,5 @@
-import React from 'react';
-import './Header.scss';
+import React from 'react'
+import './Header.scss'
 import cn from 'classnames'
 
 export interface IHeaderInterface {
@@ -7,7 +7,6 @@ export interface IHeaderInterface {
 }
 
 export const Header: React.FC<IHeaderInterface> = (props) => {
- 
   return (
     <div className={cn('Header', props.className)}>
       <div className="Header__left-world">Weather</div>

@@ -1,1 +1,0 @@
-export { ForecastForDayCard } from './ForecastForDayCard';

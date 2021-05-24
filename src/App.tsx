@@ -1,12 +1,11 @@
-import React from 'react';
-import './App.scss';
-import Background from './components/Background/Background';
-import { ForecastForDay } from './components/ForecastForDay/ForecastForDay';
-import { Header } from './components/Header';
-import { SevenDaysForecast } from './components/SevenDaysForecast/SevenDaysForecast';
+import React from 'react'
+import './App.scss'
+import Background from './components/Background/Background'
+import { ForecastForDay } from './components/ForecastForDay/ForecastForDay'
+import { Header } from './components/Header'
+import { SevenDaysForecast } from './components/SevenDaysForecast/SevenDaysForecast'
 
-
-function App() {
+function App () {
   return (
     <div className="App">
       <Background>
@@ -18,10 +17,10 @@ function App() {
           </main>
           <footer className="App__footer">C ЛЮБОВЬЮ ОТ MERCURY DEVELOPMENT</footer>
         </div>
-        
+
       </Background>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

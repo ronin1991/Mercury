@@ -7,7 +7,7 @@ export interface INoWeatherCardProps {
   className: String,
 }
 
-export const NoWeatherCard: React.FC<INoWeatherCardProps> = ({className}) => {
+export const NoWeatherCard: React.FC<INoWeatherCardProps> = ({ className }) => {
   return (
     <div className={cn('NoWeatherCard', className)}>
       <img className="NoWeatherCard__img" src={img} alt="noWeather" width="160" height="160" />

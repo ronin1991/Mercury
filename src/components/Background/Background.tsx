@@ -1,12 +1,10 @@
 import React from 'react'
 import './Background.scss'
 
-export const Background: React.FC = (props) => {
-  const { children } = props;
-
+export const Background = (props: any) => {
   return (
     <div className="Background">
-      {children}
+      {props.children}
     </div>
   )
 }
