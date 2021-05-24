@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mercury/static/css/main.ccdfebf2.chunk.css",
-    "main.js": "/mercury/static/js/main.e2b12eb5.chunk.js",
-    "main.js.map": "/mercury/static/js/main.e2b12eb5.chunk.js.map",
+    "main.js": "/mercury/static/js/main.c4edc187.chunk.js",
+    "main.js.map": "/mercury/static/js/main.c4edc187.chunk.js.map",
     "runtime-main.js": "/mercury/static/js/runtime-main.5b0ac911.js",
     "runtime-main.js.map": "/mercury/static/js/runtime-main.5b0ac911.js.map",
     "static/js/2.9422babf.chunk.js": "/mercury/static/js/2.9422babf.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.5b0ac911.js",
     "static/js/2.9422babf.chunk.js",
     "static/css/main.ccdfebf2.chunk.css",
-    "static/js/main.e2b12eb5.chunk.js"
+    "static/js/main.c4edc187.chunk.js"
   ]
 }
