@@ -10,12 +10,13 @@ export interface ISliderProps {
 
 export const Slider: React.FC<ISliderProps> = ({className, cardWeatherData}: any) => {
   const [startIndex, setStartIndex] =useState(0);
-  const endIndex = startIndex + 3;
+  const step = 3;
+  const endIndex = startIndex + step;
 
   const displaySelectedCard = () => {
     const selectedCardsData = cardWeatherData.slice(startIndex, endIndex);
     return selectedCardsData.map((data: any) => 
-      <CardWeather data={data} key={data.dt} />
+      <CardWeather data={data} key={data.dt} className=""/>
     )
   }
 

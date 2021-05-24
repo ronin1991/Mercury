@@ -1,38 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CardTitle } from '../Card/CardTitle';
 import { Card } from '../Card';
 import { CardForm } from '../CardForm';
 import { Select } from '../Select';
-import { CardBody } from '../CardBody';
-// import { NoWeatherCard } from '../NoWeatherCard';
+import { NoWeatherCard } from '../NoWeatherCard';
 import { Calendar } from '../Calendar';
+import {cities} from '../../assets/cities'
+import { useForecastForDayData } from './useForecastForDayData'
+// import { ForecastForDayCard } from '../ForecastForDayCard';
+import { CardWeather } from '../CardWeather/CardWeather';
 import './ForecastForDay.scss'
-// import { Slider } from '../Slider/Slider';
-// import { CardWeather } from '../CardWeather/CardWeather';
 
 
-
-const cities = ['Самара', 'Тольятти', 'Саратов' , 'Казань', 'Краснодар'];
 
 export const ForecastForDay = () => {
 
-  // const [selectedCity, setSelectedCity] = useState(null);
+  const [selectedCity, setSelectedCity] = useState();
+  const [selectedDay, setSelectedDay] = useState();
 
+  const cityWeatherData = useForecastForDayData(selectedCity);
 
 
   return (
     <Card>
       <CardTitle className="ForecastForDay__title">Forecast for a Date in the Past</CardTitle>
       <CardForm>
-        <Select options={ cities } className="ForecastForDay__select" onSelect="">
+        <Select options={ cities } className="ForecastForDay__select" onSelect={ setSelectedCity }>
           Select city
         </Select>
-        <Calendar />
+        <Calendar onSelectDay={setSelectedDay} />
       </CardForm>
-      <CardBody isPositionBottom={true}>
-
-        {/* <NoWeatherCard></NoWeatherCard> */}
-      </CardBody>
+      {/* <ForecastForDayCard /> */}
+      {cityWeatherData 
+        ? <CardWeather data={cityWeatherData.daily[0]} className="ForecastForDay__card" />
+        : <NoWeatherCard className=""/>
+      }
+      <p>{selectedDay}</p>
     </Card>
     
   )

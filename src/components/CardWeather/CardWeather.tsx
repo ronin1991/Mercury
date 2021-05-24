@@ -1,15 +1,19 @@
-import React from 'react'
-import './CardWeather.scss'
+import React from 'react';
+import cn from 'classnames';
+import './CardWeather.scss';
+
+
 
 export interface ICardWeatherProps {
-  data: any;
+  data: any,
+  className: any;
 }
 
 var monthShortNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
   "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
 ];
 
-export const CardWeather: React.FC<ICardWeatherProps> = ({data}) => {
+export const CardWeather: React.FC<ICardWeatherProps> = ({data, className}) => {
   const { temp, dt } = data;
   const icon = data.weather[0].icon;
 
@@ -25,7 +29,7 @@ export const CardWeather: React.FC<ICardWeatherProps> = ({data}) => {
   
   
   return (
-    <div className="CardWeather">
+    <div className={cn('CardWeather', className)}>
       <div className="CardWeather__date">
         {formatDate(dt)}
       </div>
